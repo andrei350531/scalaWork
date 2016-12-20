@@ -19,7 +19,8 @@ def runFlatten[T](list: List[T]): List[T] = {
     case head :: list => head match {           // матчимся на лист листов и применяем к нему Pattern Matching
       case head: List[T] => {                   // если HEAD - лист
         increment()
-        flatten(head) ::: flatten(list)         // вызваем рекурсивно функцию flatten на HEAD и на оставшийся лист, затем выполняем конкотенацию полученных листов
+        flatten(head) ::: flatten(list)         // вызваем рекурсивно функцию flatten на HEAD и на оставшийся лист,
+                                                // затем выполняем конкотенацию полученных листов
       }
       case head: T => {                         // если HEAD - число
         increment()
